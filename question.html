@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>   
+  <head lang="en">
+  	<link rel="stylesheet" href="styles.css">
+  	<title> Assignment 07 </title>
+  </head>
+   
+   <body>
+
+   <div class="main">
+   
+      <div>		   
+	      <img src="image/csd.jpg">
+	       <b style="align:center; padding-left:10%;font-size: 20px;">CS-474 Multimedia Technology </b>        
+	   </div>
+	  <hr class="head">  
+
+	<div class="question">  
+	                      <h3> 7th assignment </h3>
+      The objective is to segment audio signals and then to discriminate the resulting seg-
+      ments in speech and music. The only feature to be used for achieving these tasks is the
+     signal amplitude. Specifically, the average amplitude will be computed in non-overlapping
+     frames of 20 msec.
+     Initially, the power values of signal x will be smoothed using a linear system imple-
+     mented using Matlab function
+     filtfilt(b, [1 -b], x.^2)<br/>
+	 with b = 0:05. Then the instantaneous amplitude is estimated by taking the square root
+of the smoothed signal power and the average amplitude in each frame is calculated. It is
+requested to plot the average amplitude versus time in sec. The average amplitude is also
+smoothed with the above filter, and the values {A(n), n = 1, ...,NB} are obtained, where
+NB is the number of frames. The unsigned differences D(n) = |A(n + 1) - A(n - 1)| are
+then calculated. Plot D(n) versus time in sec. Identify important differences in average
+amplitude by finding the maxima of the difference D(n) that are more than twice the mean
+difference and are at least distanced 0.5 sec. In this way the audio signal is segmented.
+The maxima instants, where the difference is important, are possibly changes from voice
+to music or vice versa.<br/>
+
+In order to classify the segments resulting from the detection of the difference maxima,
+the mean value and the standard deviation for the average amplitude will be measured
+for each segment. The decision is based on the ratio of the mean value to the standard
+deviation. If the ratio is less than 2.25, it is decided that it is a voice signal, otherwise
+it is a music signal. Discriminate the whole music and voice segments, and obtain their
+description with the ratio of the mean value to the standard deviation of the average
+amplitude and with the same ratio for the average zero-crossing rate calculated on the
+same frames. The average zero-crossing ratio is given by
+
+<img src="image/formula.jpg"><br/>
+
+Results should be given for signal TestSegment.wav. The work report, the results and
+the conclusions should be given in HTML.
+Useful Matlab functions : audioread, filtfilt, findpeaks, mean, std.
+
+
+ </div>  	 
+	  <br><br>
+
+    <p align="center">
+      <button class="button button2" style="background: #16DA4B"><a href="index.html">Answer</a> </button>
+    </p>
+
+	 
+   </div>
+   
+   <div class="footer">
+   <p> cs4089 &copy; Passang 2018</p> 
+   <p>University of Crete, Heraklion @ Greece</p>   
+   </div>
+
+   </body>
+
+
+</html>
