@@ -4,12 +4,13 @@ clc
 
 [audioIn,fs] = audioread('TestSegment.wav'); %read the audio files
 
-sound(audioIn,fs); %play the audio signal
+%sound(audioIn,fs); %play the audio signal
 
 figure1 = figure;
 
 plot(audioIn); %plotting the graph
 saveas(figure1, 'audioSignal.jpg'); %saving the  graph of audio signal of testSegment.wav
+
 
 %do framing
 fd = 0.020;%define the frame duration i.e 20 msec
